@@ -24,19 +24,19 @@ const NavBar = () => {
                 <ul className="navbar-nav">
                     <li className="nav-item">
                         {/* <a className="nav-link" href="#">FACIAL</a> */}
-                        <NavLink className="nav-link" to="/category/facial">FACIAL</NavLink>
+                        <Link className="nav-link" to="/category/facial">FACIAL</Link>
                     </li>
                     <li className="nav-item">
                         {/* <a className="nav-link" href="#">CAPILAR</a> */}
-                        <NavLink className="nav-link" to="/category/capilar">CAPILAR</NavLink>
+                        <Link className="nav-link" to="/category/capilar">CAPILAR</Link>
                     </li>
                     <li className="nav-item">
                         {/* <a className="nav-link" href="#">CORPORAL</a> */}
-                        <NavLink className="nav-link" to="/category/corporal">CORPORAL</NavLink>
+                        <Link className="nav-link" to="/category/corporal">CORPORAL</Link>
                     </li>
                     <li className="nav-item">
                         {/* <a className="nav-link" href="#">MAQUILLAJE</a> */}
-                        <NavLink className="nav-link" to="/category/maquillaje">MAQUILLAJE</NavLink>
+                        <Link className="nav-link" to="/category/maquillaje">MAQUILLAJE</Link>
                     </li>
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

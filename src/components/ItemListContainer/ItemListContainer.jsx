@@ -1,20 +1,19 @@
 import {useEffect, useState} from 'react'
-import Item from '../Item/Item'
+/* import Item from '../Item/Item' */
 import ItemList from '../ItemList/ItemList'
 import { catalogo } from '../../Config'
-import ItemDetail from '../ItemDetail/ItemDetail'
-import { useParams } from 'react-router-dom'
+/* import ItemDetail from '../ItemDetail/ItemDetail' */
+/* import { useParams } from 'react-router-dom' */
 
-const ItemListContainer = ({greetings}) => {
+const ItemListContainer = ({prods}) => {
 
-   const {categoryId} = useParams()
+
   const [productos,setProductos] = useState([])
-  const group = catalogo.find((grp)=>grp.categoryId === {categoryId})
 
 useEffect(() => {
   const pedido = new Promise((resolve,reject) => {
     setTimeout(() => {
-      resolve(catalogo)
+      resolve(prods ? prods : catalogo)
     }, 2000);
   });
 
@@ -32,7 +31,7 @@ useEffect(() => {
 return (
     <div className='bg-info'>ItemListContainer
 
-        <p>{greetings}</p>
+        <p></p>
         <div className="d-flex justify-content-evenly p-4">
           <ItemList productos={productos}/>
         </div>
