@@ -31,7 +31,6 @@ const CategoryContainer = () => {
   return (
     <div>
         {prods ? <ItemListContainer prods={prods}/> : <h1>cCargando...</h1>}
-{/*         {prods ?  <ItemList productos={prods}/> : <h1>cCargando...</h1>} */}
     </div>
   )
 }
