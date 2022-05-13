@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 /* import Item from '../Item/Item' */
 import ItemList from '../ItemList/ItemList'
 import { catalogo } from '../../Config'
+import { useParams } from 'react-router-dom'
 /* import ItemDetail from '../ItemDetail/ItemDetail' */
 /* import { useParams } from 'react-router-dom' */
 
@@ -17,7 +18,7 @@ useEffect(() => {
     }, 2000);
   });
 
-  pedido.then((res) => {setProductos(res)})
+  pedido.then((res) => setProductos(res))
   .then(()=>console.log(productos))
   .catch((err)=>console.log(err))
 
@@ -26,13 +27,13 @@ useEffect(() => {
   return () => {
     
   }
-}, [])
+}, [prods])
 
 return (
     <div className='bg-info'>ItemListContainer
 
         <p></p>
-        <div className="d-flex justify-content-evenly p-4">
+        <div className="d-flex justify-content-evenly flex-wrap p-4">
           <ItemList productos={productos}/>
         </div>
 

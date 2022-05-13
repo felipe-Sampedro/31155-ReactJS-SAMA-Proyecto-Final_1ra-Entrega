@@ -1,23 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { catalogo } from '../../Config'
-import ItemList from '../ItemList/ItemList'
+/* import ItemList from '../ItemList/ItemList' */
 import ItemListContainer from '../ItemListContainer/ItemListContainer'
 
 const CategoryContainer = () => {
 
     const{categoryId} = useParams()
     const [prods, setProds] = useState([])
-    const group = catalogo.filter((prod)=>prod.categoryId == (categoryId))
+    const group = catalogo.filter((prod)=>prod.categoryId === (categoryId))
 
-/*     console.log('esta es categoria  seleccionada: ' + categoryId);
-    console.log('si se encontro '+ group.title); */
 
     useEffect(() => {
         const promesaf = new Promise((resolve,reject) =>{
             setTimeout(() => {
                 resolve(group)
-            }, 2000);
+            }, 10);
         })
         
         promesaf.then((res)=>setProds(res))
@@ -26,14 +24,14 @@ const CategoryContainer = () => {
       return () => {
 
       }
-    }, [categoryId])
+    }, [group])
     
 
 
   return (
     <div>
-        {/* {prods ? <ItemListContainer prods={prods}/> : <h1>cCargando...</h1>} */}
-        {prods ? <ItemList productos={prods}/> : <h1>cCargando...</h1>}
+        {prods ? <ItemListContainer prods={prods}/> : <h1>cCargando...</h1>}
+{/*         {prods ?  <ItemList productos={prods}/> : <h1>cCargando...</h1>} */}
     </div>
   )
 }
